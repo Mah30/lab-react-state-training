@@ -12,11 +12,11 @@ function ClickablePicture (){
 
     return (
         <div>
-            <img 
+            <img /* Foi clicada? Se sim, mostre imagem 2 (Senao :) mostre imagem 1 */
                 src={clicked ? Img2 : Img1} 
                 alt="Clickable" 
                 onClick={handleClick}
-                style= {{cursor: "pointer"}}
+                style= {{cursor: "pointer", width:"150px"}}
             />
 
         </div>
