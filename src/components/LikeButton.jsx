@@ -1,22 +1,13 @@
 import React, { useState } from 'react';
 
 function LikeButton(){
-    const [likes, setLikes] = useState(0);
-
-    const incrementLikes = () => {
-        setLikes(likes + 1)
-    }
-     
+    // Declare a new state variable, which we'll call "count"
+    const [count, setCount] = useState(0);
 
     return(
-        <div className='Likes'>
-
-            <button type='button' onClick={incrementLikes}> 
-            {likes} Likes 
-            </button>
-
-        </div>
-    );
+    <button onClick={() => setCount(count + 1)}>
+        { count } Likes
+        </button>)
 }
 
 export default LikeButton;

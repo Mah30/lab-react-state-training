@@ -1,5 +1,4 @@
-import React, {useState} from "react";
-import diceEmpty from '../assets/images/dice-empty.png';
+import{ useState} from "react";
 import dice1 from '../assets/images/dice1.png';
 import dice2 from '../assets/images/dice2.png';
 import dice3 from '../assets/images/dice3.png';
@@ -12,18 +11,19 @@ const diceArray = [dice1, dice2, dice3, dice4, dice5, dice6]
 
 
 const Dice = () => {
-    const [diceValue, setDiceValue] = useState(diceEmpty)
+    const [diceValue, setDiceValue] = useState("src/assets/images/dice3.png")
+   
 
  
     const handleRoll = () =>{
-        setDiceValue(diceEmpty)
+        setDiceValue("src/assets/images/dice3.png")
         setTimeout(() =>{
-            const rollResult = Math.floor(Math.random() * diceArray.length)
-            setDiceValue(diceArray[rollResult])
+            const randomSide = Math.floor(Math.random() * 6) + 1;
+            setDiceValue(`src/assets/images/dice${randomSide}.png`)
         },1000)
     }
 
-
+    diceArray();
 
     return (
         <img src={diceValue} style={{width:'200px', display:'flex', gap:'10px'}}
